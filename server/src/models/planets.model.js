@@ -15,7 +15,7 @@ function isHabitablePlanet(planet) {
     planet["koi_prad"] < 1.6
   )
 }
-console.log(path.join(__dirname, "..", "..", "data", "kepler_data.csv"))
+// console.log(path.join(__dirname, "..", "..", "data", "kepler_data.csv"))
 export function loadPlanetsData() {
   return new Promise((resolve, reject) => {
     fs.createReadStream(
@@ -37,11 +37,11 @@ export function loadPlanetsData() {
         reject(err)
       })
       .on("end", () => {
-        console.log(
-          habitablePlanet.map((planet) => {
-            return planet["kepler_name"]
-          })
-        )
+        // console.log(
+        //   habitablePlanet.map((planet) => {
+        //     return planet["kepler_name"]
+        //   })
+        // )
         console.log(`${habitablePlanet.length} habitable plantes found !`)
         resolve()
       })
