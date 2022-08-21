@@ -47,3 +47,7 @@ export function loadPlanetsData() {
       })
   })
 }
+
+export function getAllPlanets() {
+  return habitablePlanet
+}

@@ -20,8 +20,8 @@ app.use(morgan("short"))
 app.use(express.json())
 
 app.use(express.static(path.join(__dirname, "..", "build")))
-app.use(planetsRouter)
-app.use(launchesRouter)
+app.use("/planets", planetsRouter)
+app.use("/launches", launchesRouter)
 
 app.get("/*", (_req, res) => {
   res.sendFile(path.join(__dirname, "..", "build", "index.html"))
